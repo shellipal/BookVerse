@@ -1,7 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { googleApiKey, googleBaseUrl } from "../utils";
-import { Heart, Search } from "lucide-react";
 import BookCard from "./BookCard";
 
 const catagoryButtons = [
