@@ -1,6 +1,6 @@
 import React from "react";
 import Hero from "./components/Hero";
-import BookCatagory from "./components/bookCatagory";
+import BookCatagory from "./components/BookCatagory";
 import PopularBooks from "./components/PopularBooks";
 import NewArrival from "./components/NewArrival";
 
