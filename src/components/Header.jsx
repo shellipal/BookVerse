@@ -1,10 +1,25 @@
-import { Heart, Search } from "lucide-react";
-import React from "react";
+import { Heart, Search, X } from "lucide-react";
+import React, { useState } from "react";
 import { useBookStore } from "../store/bookStore";
-import { Link } from "react-router";
+import { Link, useNavigate } from "react-router";
 
 const Header = () => {
   const { bookmarks } = useBookStore();
+  const navigate = useNavigate();
+  const [showSearch, setShowSearch] = useState(false);
+  const [searchQuery, setSearchQuery] = useState("");
+
+  const handleSearchToggle = () => {
+    setShowSearch(!showSearch);
+  };
+
+  const handleKeyPress = (e) => {
+    if (e.key === "Enter" && searchQuery.trim() !== "") {
+      navigate(`/search?q=${encodeURIComponent(searchQuery.trim())}`);
+      setShowSearch(false);
+      setSearchQuery("");
+    }
+  };
 
   return (
     <div className="bg-black text-white">
@@ -20,9 +35,28 @@ const Header = () => {
           <li>Contact</li>
         </ul>
         <div className="flex gap-2">
-          <button className="bg-blue-700 px-4 py-2 rounded-lg text-lg font-semibold flex justify-center items-center gap-2 cursor-pointer">
-            <Search size={20} />
-          </button>
+          {showSearch ? (
+            <div className="flex items-center gap-2 bg-gray-800 px-3 py-1 rounded-lg">
+              <input
+                type="text"
+                placeholder="Search books..."
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                onKeyDown={handleKeyPress}
+                className="bg-transparent outline-none text-white w-48"
+              />
+              <button onClick={handleSearchToggle}>
+                <X size={20} className="text-gray-400 hover:text-red-400" />
+              </button>
+            </div>
+          ) : (
+            <button
+              onClick={handleSearchToggle}
+              className="bg-blue-700 px-3 py-2 rounded-lg flex justify-center items-center hover:bg-blue-600 transition"
+            >
+              <Search size={20} />
+            </button>
+          )}
 
           <Link to="/wishlist">
             <button className="relative bg-blue-700 p-2 rounded-lg text-lg font-semibold flex justify-center items-center gap-2 cursor-pointer">
