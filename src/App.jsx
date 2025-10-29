@@ -1,17 +1,13 @@
-import React from "react";
-import Hero from "./components/Hero";
-import BookCatagory from "./components/BookCatagory";
-import PopularBooks from "./components/PopularBooks";
-import NewArrival from "./components/NewArrival";
+import { Route, Routes } from "react-router";
+import Home from "./pages/Home";
+import WishList from "./pages/WishList";
 
 const App = () => {
   return (
-    <div>
-      <Hero />
-      <BookCatagory />
-      <PopularBooks />
-      <NewArrival />
-    </div>
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/wishlist" element={<WishList />} />
+    </Routes>
   );
 };
 
