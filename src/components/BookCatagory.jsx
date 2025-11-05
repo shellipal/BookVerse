@@ -17,8 +17,6 @@ const BookCatagory = () => {
   const [loading, setLoading] = useState(false);
   const [queryValue, setQueryValue] = useState("trending-books");
 
-  console.log(books);
-
   const handleClick = (value) => {
     setQueryValue(value);
   };
