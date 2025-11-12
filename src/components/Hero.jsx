@@ -82,7 +82,7 @@ const Hero = () => {
           <img
             src={book?.volumeInfo?.imageLinks?.thumbnail}
             alt={book?.volumeInfo?.title}
-            className="rotate-15 w-52 md:w-72"
+            className="rotate-15 w-52 md:w-60"
           />
         </div>
       </div>
