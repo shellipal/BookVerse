@@ -20,6 +20,7 @@ const BookCard = ({ book }) => {
         {book.volumeInfo?.title || "Untitled"}
       </h1>
       {/* <p className="text-gray-400 text-sm">{book.volumeInfo?.authors[0]}</p> */}
+
       <button
         onClick={handleBookMark}
         className="absolute top-2 right-2 mt-2 bg-blue-700 p-2 rounded-lg text-lg font-semibold flex justify-center items-center gap-2 hover:bg-blue-600 transition cursor-pointer"
