@@ -36,14 +36,15 @@ const BookCatagory = () => {
   }, [queryValue]);
 
   return (
-    <div className="bg-black min-h-[60vh] py-7">
+    <div className="bg-black min-h-[60vh]  px-3 md:px-0  py-7">
       <div className="max-w-7xl mx-auto">
         //buttons
-        <div className="grid grid-cols-6 gap-8">
+        <div className="flex gap-4 px-2 py-2 snap-x snap-mandatory overflow-x-auto scrollbar-hide md:grid md:grid-cols-6 md:gap-6 md:overflow-x-visible md:snap-none">
           {catagoryButtons.map((button) => (
             <button
+              key={button.value}
               onClick={() => handleClick(button.value)}
-              className={`border-2 hover:cursor-pointer border-blue-700 text-white px-3 py-2 rounded-lg text-lg font-semibold ${
+              className={`flex-shrink-0 border-2 border-blue-700 text-white px-4 py-2 rounded-lg text-lg font-semibold snap-center transition-colors duration-200 w-max md:w-full ${
                 queryValue === button.value
                   ? "bg-blue-700"
                   : "hover:bg-blue-700"
@@ -55,11 +56,11 @@ const BookCatagory = () => {
         </div>
         <div>
           {loading ? (
-            <div className=" min-h-[50vh] flex justify-center items-center h-64 text-white text-xl font-semibold">
+            <div className=" min-h-[50vh] flex justify-center items-center h-64 text-gray-500 text-xl font-semibold">
               Loading books...
             </div>
           ) : (
-            <div className="min-h-[50vh] grid grid-cols-4 gap-6 text-white">
+            <div className="min-h-[50vh] grid grid-col-1 sm:grid-cols-2 md:grid-cols-4 gap-6 text-white">
               {books.length === 0 ? (
                 <p className="text-center col-span-4 text-gray-400">
                   No books found
