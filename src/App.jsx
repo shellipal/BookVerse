@@ -4,6 +4,7 @@ import WishList from "./pages/WishList";
 import Search from "./pages/Search";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
+import BookDetail from "./pages/bookDetail";
 
 const App = () => {
   return (
@@ -13,6 +14,7 @@ const App = () => {
       <Route path="/search" element={<Search />} />
       <Route path="/About" element={<About />} />
       <Route path="/Contact" element={<Contact />} />
+      <Route path="/book/:id" element={<BookDetail />} />
     </Routes>
   );
 };

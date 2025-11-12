@@ -1,5 +1,6 @@
 import { Heart } from "lucide-react";
 import { useBookStore } from "../store/bookStore";
+import { Link } from "react-router";
 
 const BookCard = ({ book }) => {
   const { bookmarks, toggleBookmark } = useBookStore();
@@ -27,9 +28,11 @@ const BookCard = ({ book }) => {
       >
         <Heart size={18} fill={isBookmarked ? "white" : "none"} />
       </button>
-      <button className="bg-blue-700 p-1 mt-2 mb-2 rounded-lg text-lg font-semibold flex justify-center items-center gap-2 hover:bg-blue-600 transition cursor-pointer w-full">
-        Read Now
-      </button>
+      <Link to={`/book/${book.id}`}>
+        <button className="bg-blue-700 p-1 mt-2 mb-2 rounded-lg text-lg font-semibold flex justify-center items-center gap-2 hover:bg-blue-600 transition cursor-pointer w-full">
+          Read Now
+        </button>
+      </Link>
     </div>
   );
 };

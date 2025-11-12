@@ -23,17 +23,17 @@ const PopularBooks = () => {
   }, []);
 
   return (
-    <div className="bg-black min-h-[60vh] py-7">
+    <div className="bg-black min-h-[60vh] px-3 md:px-0 py-7">
       <div className="max-w-7xl mx-auto">
         <Heading title={"Popular Books"} desc={"2025 popular books"} />
 
         <div>
           {loading ? (
-            <div className=" min-h-[50vh] flex justify-center items-center h-64 text-white text-xl font-semibold">
+            <div className=" min-h-[50vh] flex justify-center items-center h-64 text-gray-500 text-xl font-semibold">
               Loading books...
             </div>
           ) : (
-            <div className="min-h-[50vh] grid grid-cols-4 gap-6 text-white">
+            <div className="min-h-[50vh] grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 text-white">
               {popularBook.length === 0 ? (
                 <p>No books found</p>
               ) : (

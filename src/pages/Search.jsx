@@ -26,7 +26,7 @@ const Search = () => {
   console.log("Searech data", searchData);
 
   return (
-    <div className=" min-h-[60vh] py-7">
+    <div className=" min-h-[100vh] py-7 bg-black">
       <div className="max-w-7xl mx-auto">
         <div>
           {loading ? (
