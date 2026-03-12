@@ -8,7 +8,7 @@ const team = [
     role: "Frontend Developer",
     img: "",
   },
-  { name: "Ruchi Pundir", role: "Designer", img: "" },
+  // { name: "Ruchi Pundir", role: "Designer", img: "" },
 ];
 
 export default function About() {
@@ -120,7 +120,7 @@ export default function About() {
             Small team, big focus on building great reading experiences.
           </p>
 
-          <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-6">
+          <div className="mt-6 grid grid-cols-1 sm:grid-cols-1 gap-6">
             {team.map((m) => (
               <div
                 key={m.name}
